@@ -1,2 +1,2 @@
-const URL = "http://localhost:3002"
+const URL = "https://api.helpcorona.xyz"
 export default URL
