@@ -1,0 +1,19 @@
+.vaccine-container {
+    min-height: 100vh;
+    padding-bottom: 10vh;
+    width: 100vw;
+    background-color: #161618!important;
+}
+
+.input-form {
+    background: rgb(228, 160, 0);
+    background: linear-gradient(96deg, #518DDC 0%, rgb(169, 115, 255) 100%);
+    background-blend-mode: luminosity;
+    border-radius: 20px;
+}
+
+.vaccineCenterCard {
+    border-style: solid;
+    border-width: 3px;
+    border-color: #518DDC;
+}

@@ -1,0 +1,26 @@
+.container.px-5 {
+    background-color: #ffffff;
+    padding-bottom: 10vh;
+}
+
+.go-back {
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.go-back-icon {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-radius: 50%;
+    border-color: #ffffff;
+    border-width: 3px;
+    border-style: solid;
+    height: 40px;
+    width: 40px;
+}
+
+.go-back-text {
+    line-height: 40px;
+}

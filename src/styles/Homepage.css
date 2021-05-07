@@ -1,0 +1,97 @@
+@font-face {
+  font-family: "Punch Regular";
+  font-style: normal;
+  font-weight: normal;
+  src: url("../assets/punch.woff");
+}
+
+.homepageBannerArea {
+  height: 100vh !important;
+  width: 100vw;
+}
+
+.homepageBannerText {
+  font-family: "Punch Regular" !important;
+  font-size: 12rem;
+  line-height: 12rem;
+}
+
+.homepageBannerText-mobile {
+  font-family: "Punch Regular" !important;
+  font-size: 4rem;
+  line-height: 8rem;
+}
+
+.home-feature-page {
+  width: 100vw;
+}
+
+.thick-font {
+  font-family: "Inter";
+  font-weight: 900;
+}
+
+.homepage-gallery-container {
+  height: 60vh;
+  width: 100vw;
+}
+
+.button-home {
+  background-color: #518ddc !important;
+  border: 0 !important;
+}
+
+.button-home:hover {
+  mix-blend-mode: normal;
+  background-color: #e95184 !important;
+}
+
+.social-icons {
+  color: #ffffff;
+}
+
+.social-icons:hover {
+  color: #2a75d8;
+}
+
+.scroll-banner {
+  background-color: #ffffff;
+  max-width: fit-content;
+  border-radius: 10px 10px 0 0;
+}
+
+.first-side {
+  background-image: url("../assets/privacycamera.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.tile-gallery {
+  height: 50vh;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+.tile-1 {
+  background-image: url("../assets/wash.jpg");
+}
+
+.tile-2 {
+  background-image: url("../assets/masks.jpg");
+}
+
+.tile-3 {
+  background-image: url("../assets/things.jpg");
+}
+
+.tile-4 {
+  background-image: url("../assets/warning.jpg");
+}
+
+@media only screen and (max-width: 768px) {
+  .tile-gallery {
+    height: 80vw;
+  }
+}

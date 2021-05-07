@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <meta name="theme-color" content="#000000" />
+  <meta name="description"
+    content="All the information regarding covid resources at one place. All data is verified personally by our team." />
+  <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+  <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@900&display=swap" rel="stylesheet">
+  <title>HelpCorona | Help India fight Covid-19 privately</title>
+  <meta name="title" content="HelpCorona | Help India fight Covid-19">
+  <meta name="description"
+    content="HelpCorona | Help India fight Covid-19: Find all Covid related support resources, personally vetted by dedicated volunteers from all around the country.">
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://helpcorona.xyz/">
+  <meta property="og:title" content="HelpCorona | Help India fight Covid-19">
+  <meta property="og:description"
+    content="HelpCorona | Help India fight Covid-19: Find all Covid related support resources, personally vetted by dedicated volunteers from all around the country.">
+  <meta property="og:image"
+    content="https://images.unsplash.com/photo-1584036561566-baf8f5f1b144">
+
+  <!-- Twitter -->
+  <meta property="twitter:card"
+    content="https://images.unsplash.com/photo-1584036561566-baf8f5f1b144">
+  <meta property="twitter:url" content="https://helpcorona.xyz/">
+  <meta property="twitter:title" content="HelpCorona | Help India fight Covid-19">
+  <meta property="twitter:description"
+    content="Find all Covid related support resources, personally vetted by dedicated volunteers from all around the country.">
+  <meta property="twitter:image"
+    content="https://images.unsplash.com/photo-1584036561566-baf8f5f1b144">
+  <script src="https://kit.fontawesome.com/4b9ba14b0f.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <noscript>You need to enable JavaScript to run this app.</noscript>
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', function () {
+        navigator.serviceWorker.register('worker.js').then(function (registration) {
+          console.log('Worker registration successful', registration.scope);
+        }, function (err) {
+          console.log('Worker registration failed', err);
+        }).catch(function (err) {
+          console.log(err);
+        });
+      });
+    } else {
+      console.log('Service Worker is not supported by browser.');
+    }
+  </script>
+  <div id="root"></div>
+</body>
+
+</html>
