@@ -100,7 +100,7 @@ const Requests = () => {
             </Helmet>
 
             <NavigationBar page="request" />
-            <div className="container-fluid entire-card-collection" style={{ paddingTop: "10vh" }}>
+            <div className="container-fluid entire-card-collection pb-5" style={{ paddingTop: "10vh" }}>
                 <div className="row-fluid text-right mx-3">
                     <a href="https://form.helpcorona.xyz" target="_blank" rel="noreferrer"><div className="position- btn btn-outline-danger ml-2">Ask for help</div></a>
                 </div>

@@ -109,7 +109,7 @@ const Resources = () => {
             </Helmet>
 
             <NavigationBar page="resource" />
-            <div className="container-fluid pt-5" style={{ backgroundColor: "#0b1022", minHeight: "100vh" }}>
+            <div className="container-fluid pt-5 pb-5" style={{ backgroundColor: "#0b1022", minHeight: "100vh" }}>
                 <div className="container pt-5">
                     <Typography.Title className="text-white pt-5">Find Resources</Typography.Title>
                     <div className="row pt-2">
