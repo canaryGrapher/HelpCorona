@@ -79,7 +79,7 @@ const Homepage = () => {
           <Link to="/resource">
             <Button className="mx-2 my-2 button-home" size="lg">Resources</Button>
           </Link>
-          <Link to="/request">
+          <Link to="/requests">
             <Button className="mx-2 my-2 button-home" size="lg">Ask For Help</Button>
           </Link>
           <Link to="/vaccine">

@@ -8,6 +8,7 @@ import Legal from './pages/Legal'
 import Vaccine from './pages/Vaccine'
 import Thread from './pages/Thread'
 import Resources from './pages/Resources'
+import Login from './pages//Login'
 import Volunteer from './pages/Volunteer'
 
 const App = () => {
@@ -19,6 +20,7 @@ const App = () => {
       <Route exact={true} path='/vaccine' component={Vaccine} />
       <Route exact={true} path='/resource' component={Resources} />
       <Route exact={true} path='/thread/:id' component={Thread} />
+      <Route exact={true} path='/login' component={Login} />
       <Route exact={true} path='/volunteer' component={Volunteer} />
     </Switch>
   );
