@@ -15,10 +15,8 @@ const NavigationBar = (props) => {
     const styleResource = selectedTile === "resource" ? "text-theme" : null
     return (
         <Fragment>
-            <Navbar expand="lg" className="position-fixed w-100 navbar-dark" style={{
-                backgroundColor: "rgba(0,0,0,0.6)", zIndex: "100"
-            }}>
-                <Navbar.Brand href="/" className="text-white fw-bolder">
+            <Navbar expand="lg" className="position-absolute w-100 navbar-light mx-auto" style={{ zIndex: "100" }}>
+                <Navbar.Brand href="/" className="text-dark font-weight-bold fw-bolder position-absolute">
                     <img
                         src={logo}
                         width="30"
@@ -26,9 +24,9 @@ const NavigationBar = (props) => {
                         className="d-inline-block align-top"
                         alt="HelpCorona Logo"
                     />{' '}HelpCorona</Navbar.Brand>
-                <Navbar.Toggle aria-controls="basic-navbar-nav" className="text-white" />
-                <Navbar.Collapse id="basic-navbar-nav">
-                    <Nav className="ml-auto">
+                <Navbar.Toggle aria-controls="basic-navbar-nav" className="text-dark" />
+                <Navbar.Collapse className="mx-auto p-0 m-0" id="basic-navbar-nav">
+                    <Nav className="text-dark mx-auto">
                         <Link className="nav-link" to="/">
                             <span className={styleHome}>Home</span>
                         </Link>

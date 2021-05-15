@@ -1,163 +1,228 @@
-import React, { Fragment, useEffect, useState } from 'react';
-import backgroundVideo from '../assets/wallVideo.mp4';
-import { Typography } from 'antd'
-import '../styles/Homepage.css';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import { Link } from 'react-router-dom'
+import React, { Fragment, useEffect, useState } from "react";
+import { Typography } from "antd";
+import "../styles/Homepage.css";
+import "bootstrap/dist/css/bootstrap.min.css";
+import Privacy from "../assets/privacy.png";
+import Promise from "../assets/promise.png";
+import { Link } from "react-router-dom";
 
 //importing components
-import NavigationBar from '../components/NavigationBar'
-import Footer from '../components/Footer'
-import axios from 'axios';
-import Button from 'react-bootstrap/Button'
+import NavigationBar from "../components/NavigationBar";
+import Footer from "../components/Footer";
+import axios from "axios";
 import { Helmet } from "react-helmet";
 
-const { Paragraph } = Typography
+const { Paragraph, Title } = Typography;
 
 const Homepage = () => {
-  const [totalCases, setTotalCases] = useState(0)
-  const [totalDeaths, setTotalDeaths] = useState(0)
+  const [totalCases, setTotalCases] = useState(0);
+  const [totalDeaths, setTotalDeaths] = useState(0);
 
   useEffect(() => {
     const fetchCases = async () => {
       const getData = await axios({
-        method: 'GET',
-        url: 'https://covid-19-coronavirus-statistics.p.rapidapi.com/v1/total',
-        params: { country: 'India' },
+        method: "GET",
+        url: "https://covid-19-coronavirus-statistics.p.rapidapi.com/v1/total",
+        params: { country: "India" },
         headers: {
-          'x-rapidapi-key': 'b7cd534342msh45d4a6a77809ac5p1e08f8jsnb8ca8b37e13f',
-          'x-rapidapi-host': 'covid-19-coronavirus-statistics.p.rapidapi.com'
-        }
-      })
+          "x-rapidapi-key":
+            "b7cd534342msh45d4a6a77809ac5p1e08f8jsnb8ca8b37e13f",
+          "x-rapidapi-host": "covid-19-coronavirus-statistics.p.rapidapi.com",
+        },
+      });
       const totalCases = getData.data.data.confirmed;
       const totalDeaths = getData.data.data.deaths;
-      setTotalCases(totalCases.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","))
-      setTotalDeaths(totalDeaths.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","))
-    }
-    fetchCases()
-  }, [])
+      setTotalCases(
+        totalCases.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")
+      );
+      setTotalDeaths(
+        totalDeaths.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")
+      );
+    };
+    fetchCases();
+  }, []);
 
   return (
     <Fragment>
-
       <Helmet>
         {/* General tags */}
         <title>HelpCorona: Help India fight coronavirus</title>
         <link rel="canonical" href="https://helpcorona.xyz/" />
         <meta name="title" content="HelpCorona: Help India fight coronavirus" />
-        <meta name="description"
-          content="Find all Covid related support resources, personally vetted by dedicated volunteers from all around the country." />
-        
+        <meta
+          name="description"
+          content="Find all Covid related support resources, personally vetted by dedicated volunteers from all around the country."
+        />
+
         {/* Open graph tags */}
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://helpcorona.xyz/" />
-        <meta property="og:title" content="HelpCorona: Help India fight coronavirus" />
-        <meta property="og:description"
-          content="Find all Covid related support resources, personally vetted by dedicated volunteers from all around the country." />
-        <meta property="og:image"
-          content="https://images.unsplash.com/photo-1584036561566-baf8f5f1b144" />
-        
+        <meta
+          property="og:title"
+          content="HelpCorona: Help India fight coronavirus"
+        />
+        <meta
+          property="og:description"
+          content="Find all Covid related support resources, personally vetted by dedicated volunteers from all around the country."
+        />
+        <meta
+          property="og:image"
+          content="https://images.unsplash.com/photo-1584036561566-baf8f5f1b144"
+        />
+
         {/* For Twitter */}
-        <meta property="twitter:card"
-          content="https://images.unsplash.com/photo-1584036561566-baf8f5f1b144" />
+        <meta
+          property="twitter:card"
+          content="https://images.unsplash.com/photo-1584036561566-baf8f5f1b144"
+        />
         <meta property="twitter:url" content="https://helpcorona.xyz/" />
-        <meta property="twitter:title" content="HelpCorona: Help India fight coronavirus" />
-        <meta property="twitter:description"
-          content="Find all Covid related support resources, personally vetted by dedicated volunteers from all around the country." />
-        <meta property="twitter:image"
-          content="https://images.unsplash.com/photo-1584036561566-baf8f5f1b144" />
+        <meta
+          property="twitter:title"
+          content="HelpCorona: Help India fight coronavirus"
+        />
+        <meta
+          property="twitter:description"
+          content="Find all Covid related support resources, personally vetted by dedicated volunteers from all around the country."
+        />
+        <meta
+          property="twitter:image"
+          content="https://images.unsplash.com/photo-1584036561566-baf8f5f1b144"
+        />
       </Helmet>
 
-      <NavigationBar page="home" />
-      <video autoPlay loop muted playsInline={true} disablePictureInPicture={true} style={{ position: "fixed", right: "0", bottom: "0", minWidth: "100%", minHeight: "100%", zIndex: "-10", pointerEvents: "none" }} src={backgroundVideo} type="video/mp4" />
-      <div className="homepageBannerArea d-flex flex-column justify-content-center mx-auto text-center col-11 col-md-12" style={{ width: "100vw" }}>
-        <p className="text-white p-0 m-0 d-none d-md-inline" style={{ fontSize: "1.5rem" }}>This is our fight against the virus</p>
-        <p className="text-white p-0 m-0 d-md-none" style={{ fontSize: "1.3rem" }}>This is our fight against the virus,</p>
-        <h1 className="homepageBannerText d-none d-md-inline text-white m-0 p-0">Gear up</h1>
-        <h1 className="homepageBannerText-mobile d-inline d-md-none text-white m-0 p-0">Gear up</h1>
-        <div className="p-0 m-0 d-flex flex-column flex-md-row justify-content-center">
-          <Link to="/resource">
-            <Button className="mx-2 my-2 button-home" size="lg">Resources</Button>
-          </Link>
-          <Link to="/requests">
-            <Button className="mx-2 my-2 button-home" size="lg">Ask For Help</Button>
-          </Link>
-          <Link to="/vaccine">
-            <Button className="mx-2 my-2 button-home" size="lg">Vaccine Finder</Button>
-          </Link>
+      <div className="container-fluid m-0 p-0">
+        <NavigationBar page="home" />
+        <div className="firstSection d-flex flex-column justify-content-center">
+          <div
+            className="bg-dark mx-auto home-banner"
+            style={{ height: "85vh", width: "90vw" }}
+          ></div>
+          <div className="position-absolute text-center w-100 pt-5 mt-5">
+            <Paragraph
+              className="text-white pb-0 mb-0 font-weight-bold"
+              style={{ fontSize: "1.5rem" }}
+            >
+              We are here to help,
+            </Paragraph>
+            <span
+              className="text-thick text-light-theme pt-0 mt-0 text-focus"
+            >
+              PRIVATELY.
+            </span>
+            <Paragraph
+              className="text-white pb-0 mb-0 font-weight-bold"
+              style={{ fontSize: "1.5rem" }}
+            >
+              You don't need to share your phone number to get help.
+            </Paragraph>
+          </div>
         </div>
-        <div className="position-absolute d-flex flex-column justify-content-center text-white my-auto h-100" style={{ bottom: "20px" }}>
-          <a href="https://twitter.com/helpcorona_xyz"><i style={{ fontSize: "1.3rem" }} class="social-icons mx-1 my-3 fab fa-twitter"></i></a>
-          <a href="https://www.instagram.com/help_corona/"><i style={{ fontSize: "1.3rem" }} class="social-icons mx-1 my-3 fab fa-instagram"></i></a>
+        <div
+          className="row text-center p-2 p-md-5 mx-auto mt-5"
+          style={{ backgroundColor: "rgba(112,112,112,0.1)", width: "90vw" }}
+        >
+          <h2 className="mx-auto w-100 pt-3">
+            We eliminate the need to share your contact details
+          </h2>
+          <Paragraph
+            className="pt-3 w-75 mx-auto"
+            style={{ fontSize: "1.2rem" }}
+          >
+            HelpCorona acts as an intermediator between you and hundreds of
+            people willing to help without disclosing your contact details. Your
+            details stay with the trusted handful people of the organization, so
+            that they can inform you about verified leads.
+          </Paragraph>
         </div>
-        <div className="position-absolute w-100 m-0" style={{ bottom: "0px" }}>
-          <div className="scroll-banner mx-auto m-0 p-0">
-            <p className="px-2 py-2 m-0">Scroll down to know our mission</p>
+        <div className="text-center mt-3 mb-5">
+          <img src={Privacy} alt="privacy image" className="img-fluid image-privacy" />
+        </div>
+        <div className="container-fluid p-md-5 mx-auto mt-5">
+          <h2 className="mx-auto text-center">How it works?</h2>
+          <div className="row how-it-works-section mx-auto">
+            <div className="col-12 col-md-6">
+              <div className="mx-auto work-card m-3 p-3">
+                <Title level={3}>1: Form filling</Title>
+                <Paragraph>
+                  When you fill the form for a request, it is sent to our
+                  backend and we store it securely on our database.
+                </Paragraph>
+              </div>
+            </div>
+            <div className="col-12 col-md-6">
+              <div className="mx-auto work-card m-3 p-3">
+                <Title level={3}>2: Data removal</Title>
+                <Paragraph>
+                  All your personal information like name, phone number and
+                  email address is encrypted, and never sent to the frontend.
+                  Only a select few, trusted people can view those details for
+                  contacting you.
+                </Paragraph>
+              </div>
+            </div>
+            <div className="col-12 col-md-6">
+              <div className="mx-auto work-card m-3 p-3">
+                <Title level={3}>3: Thread creation</Title>
+                <Paragraph>
+                  After your request has been processed by our backend, we
+                  create a thread for it, which can be seen on our homepage.
+                  This is where you can keep track of the leads by other people.
+                </Paragraph>
+              </div>
+            </div>
+            <div className="col-12 col-md-6">
+              <div className="mx-auto work-card m-3 p-3">
+                <Title level={3}>4: Lead confirmation</Title>
+                <Paragraph>
+                  Once we get a lead that 100% accurate and helpful, we make the
+                  call to inform you about that lead, and finally close your
+                  request once you have been helped.
+                </Paragraph>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          className="row text-center p-5 mx-auto my-5"
+          style={{ backgroundColor: "rgba(112,112,112,0.1)", width: "90vw" }}
+        >
+          <h2 className="mx-auto w-100">Why us?</h2>
+          <Paragraph
+            className="pt-3 mx-auto"
+            style={{ fontSize: "1.2rem" }}
+          >
+            Everyday, thousands of people throughout India ask for help for
+            their loved ones online, but in the process, end up providing
+            personal information like phone numbers. And when this personal
+            information land in the hands of hackers and scammers, it is not
+            good. This is where we come in. We connect you to the help providers, in-directly. The moment your help request has a verified lead, we'll personally call you, and after your request is fulfilled, we will close your request, deleting all your data from our systems.
+          </Paragraph>
+        </div>
+        <div className="container my-5 py-5">
+          <div className="row">
+            <div className="col-12 col-md-6 d-flex flex-column justify-content-center px-4">
+              <Title level={2}>
+                The <span className="text-light-theme">Privacy</span> promise
+              </Title>
+              <Paragraph style={{ fontSize: "1.2rem" }}>
+                Your data is securely stored on our databases and we do not
+                intend to make any money out of it. This entire website runs
+                through the money invested by the creators purely out of
+                goodwill. There are no ads, or any scientific research projects
+                to study behavior. It is created with only one thing in mind, to
+                help the people of this country during these tough times.
+              </Paragraph>
+            </div>
+            <div className="col-12 col-md-6 d-flex flex-column justify-content-center">
+              <img src={Promise} className="img-fluid" />
+            </div>
           </div>
         </div>
       </div>
 
-
-      <div className="container-fluid m-0 p-0 home-feature-page w-100 bg-white" style={{ width: "100vw" }}>
-        <div className="row m-0 h-100 w-100">
-          <div className="col-12 col-md-6 p-5 d-flex flex-column justify-content-center">
-            <div className="w-100 mx-auto py-5">
-              <p className="thick-font m-0 w-75" style={{ fontSize: "3rem" }}>
-                #Privacy
-              </p>
-              <p style={{ fontSize: "1.2rem" }}>Don't wanna share your contact details with random strangers on the internet, but still need that help? Let us help you. Handpicked, trusted people who will directly contact you once resources for you have been found, without sharing your contact details with a third party organization, because we all need privacy, no matter how adverse the situation.</p>
-            </div>
-          </div>
-          <div className="col-12 col-md-6 first-side"></div>
-        </div>
-      </div>
-
-
-      <div className="container-fluid m-0 p-0 home-feature-page bg-white" style={{ width: "100vw" }}>
-        <div className="row h-100">
-
-          <div className="col-12 text-center d-flex flex-column justify-content-center" style={{ backgroundColor: "#44474C" }}>
-            <p className="mx-auto w-75 blockquote py-5 text-white" style={{ fontSize: "1.7rem" }}>“Getting information from the Internet is like taking a drink from a hydrant.”</p>
-          </div>
-
-
-          <div className="col-12 pt-5">
-            <h3 className="font-weight-normal text-center pt-5 thick-font">Coronavirus cases in India</h3>
-          </div>
-
-          <div className="col-12 col-md-6 w-100 p-0 m-0" style={{ overflowX: "hidden", width: "100vw" }}>
-            <div className="d-flex flex-column justify-content-center text-center py-3 px-0 mx-0">
-              <Paragraph className="mb-0 pb-0 font-weight-normal text-dark">Total cases</Paragraph>
-              <p className="pb-3 display-4 p-0 m-0 w-100 font-weight-bold text-primary">{totalCases}</p>
-            </div>
-          </div>
-
-          <div className="col-12 col-md-6 w-100 p-0 m-0" style={{ overflowX: "hidden", width: "100vw" }}>
-            <div className="d-flex flex-column justify-content-center text-center py-3 px-0 mx-0">
-              <Paragraph className="mb-0 pb-0 font-weight-normal text-dark">Total deaths</Paragraph>
-              <p className="pb-3 display-4 p-0 m-0 w-100 font-weight-bold text-danger">{totalDeaths}</p>
-            </div>
-          </div>
-          <div className="container row mx-auto py-5">
-            <div className="col-12 col-md-6 tile-gallery tile-1"></div>
-            <div className="col-12 col-md-6 tile-gallery tile-2"></div>
-            <div className="col-12 col-md-6 tile-gallery tile-3"></div>
-            <div className="col-12 col-md-6 tile-gallery tile-4"></div>
-          </div>
-          <div className="col-12 text-center py-5">
-            <div className="py-5 w-50 mx-auto text-muted d-none d-md-flex">
-              <blockquote className="blockquote" style={{ fontSize: "1.7rem" }}>"Started with privacy in mind, we are here to provide any assistance regarding covid-19"</blockquote>
-            </div>
-            <div className="py-5 w-75 mx-auto text-muted d-md-none">
-              <blockquote className="blockquote" style={{ fontSize: "1.7rem" }}>"Started with privacy in mind, we are here to provide any assistance regarding covid-19"</blockquote>
-            </div>
-          </div>
-
-        </div>
-      </div>
       <Footer />
     </Fragment>
   );
-}
+};
 
-export default Homepage
+export default Homepage;

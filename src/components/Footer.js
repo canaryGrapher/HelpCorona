@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 const Footer = () => {
     return (
         <Fragment>
-            <div className="container-fluid d-flex flex-column justify-content-center py-4" style={{ backgroundColor: "rgb(0,0,0)", minHeight: "20vh" }}>
+            <div className="container-fluid d-flex flex-column justify-content-center py-4" style={{ backgroundColor: "rgb(50,50,50)", minHeight: "20vh" }}>
                 <div className="row">
                     <div className="col-12 col-md-4 text-center text-white">
                         <h2 className="text-white m-0 p-0">HelpCorona</h2>
