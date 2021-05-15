@@ -43,7 +43,7 @@ const Legal = () => {
                     content="https://images.unsplash.com/photo-1450101499163-c8848c66ca85" />
             </Helmet>
 
-            <NavigationBar />
+            <NavigationBar page="legal" />
             <div className="position-absolute go-back p-3 text-center d-flex flex-row">
                 <a className="text-dark" href="/"><i className="fas fa-long-arrow-alt-left fs-3 go-back-icon p-0 m-0"></i></a>
                 <p className="ps-2 fs-5 go-back-text">Go Back</p>

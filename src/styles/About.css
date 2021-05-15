@@ -1,0 +1,74 @@
+@font-face {
+  font-family: "Punch Regular";
+  font-style: normal;
+  font-weight: normal;
+  src: url("../assets/punch.woff");
+}
+
+.firstSection {
+  height: 100vh;
+}
+
+.home-banner {
+  background-image: url("../assets/homeimage.jpg");
+  background-position: center center;
+  background-size: cover;
+  background-attachment: scroll;
+  background-repeat: no-repeat;
+}
+
+.text-thick {
+  font-family: "Punch Regular";
+}
+
+.text-light-theme {
+  color: #89b7f3;
+}
+
+.text-focus {
+  font-size: 10rem;
+  line-height: 8rem;
+}
+
+.image-privacy {
+  width: 25%;
+}
+
+.work-card {
+  background-color: rgba(42, 117, 216, 0.1);
+  min-height: 250px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.how-it-works-section {
+  width: 85%;
+}
+
+.case-counter {
+  font-size: 1.8rem;
+}
+
+@media only screen and (max-width: 768px) {
+  .text-focus {
+    font-size: 4rem;
+    line-height: 3rem;
+  }
+
+  .image-privacy {
+    width: 90%;
+  }
+
+  .how-it-works-section {
+    width: 95%;
+  }
+
+  .work-card {
+    width: 100%;
+  }
+
+  .case-counter {
+    font-size: 1.5rem;
+  }
+}

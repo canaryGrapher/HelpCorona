@@ -14,7 +14,7 @@
     flex-direction: column;
     justify-content: center;
     border-radius: 50%;
-    border-color: #ffffff;
+    border-color: #2e2e2e;
     border-width: 3px;
     border-style: solid;
     height: 40px;
@@ -22,5 +22,6 @@
 }
 
 .go-back-text {
+    padding-left: 10px;
     line-height: 40px;
 }
