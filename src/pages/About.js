@@ -155,7 +155,7 @@ const About = () => {
             </div>
             <div className="col-12 col-md-6">
               <div className="mx-auto work-card m-3 p-3">
-                <Title level={3}>2: Data removal</Title>
+                <Title level={3}>2: Data stripping</Title>
                 <Paragraph>
                   All your personal information like name, phone number and
                   email address is encrypted, and never sent to the frontend.
@@ -263,15 +263,21 @@ const About = () => {
         </div>
         <div className="container">
           <Paragraph style={{ fontSize: "1.2rem" }}>
-            It hurts to see so many people suffering, and while being completely
+            It hurts to see so many people suffering and, while being completely
             able, not being able to help. Volunteer some of your time and sleep
-            peacefully at night knowing you helped someone in need. All you need
-            to do is pick a request and find resources that might help them
-            resolve their issue related to finding help for their helped ones,
-            be it medicines, hospital beds, oxygen cyliders or concentrators,
-            food service, or plasma donors.
+            peacefully at night, knowing you helped someone in need. All you
+            need to do is pick a request and find resources that might help the
+            person, be it medicines, hospital beds, oxygen cylinders or
+            concentrators, food service, or plasma donors. We are also looking
+            for a technical team (MERN Stack) to manage the website and add new
+            features and security updates. If there are ways you can help us in
+            other ways, you are more than welcome.
           </Paragraph>
-          <a href="https://forms.office.com/r/SHLQNh6HPg" target="_blank" rel="noreferrer">
+          <a
+            href="https://forms.office.com/r/SHLQNh6HPg"
+            target="_blank"
+            rel="noreferrer"
+          >
             <div className="btn btn-lg btn-dark mb-4">Volunteer</div>
           </a>
         </div>
