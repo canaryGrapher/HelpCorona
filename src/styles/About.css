@@ -15,6 +15,8 @@
   background-size: cover;
   background-attachment: scroll;
   background-repeat: no-repeat;
+  height: 85vh;
+  width: 90vw;
 }
 
 .text-thick {
@@ -70,5 +72,10 @@
 
   .case-counter {
     font-size: 1.5rem;
+  }
+
+  .home-banner {
+    height: 100vh;
+    width: 100vw;
   }
 }

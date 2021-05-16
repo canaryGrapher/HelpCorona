@@ -92,10 +92,7 @@ const About = () => {
       <div className="container-fluid m-0 p-0">
         <NavigationBar page="about" />
         <div className="firstSection d-flex flex-column justify-content-center">
-          <div
-            className="bg-dark mx-auto home-banner"
-            style={{ height: "85vh", width: "90vw" }}
-          ></div>
+          <div className="bg-dark mx-auto home-banner"></div>
           <div className="position-absolute text-center w-100 pt-5 mt-5">
             <Paragraph
               className="text-white pb-0 mb-0 font-weight-bold"
