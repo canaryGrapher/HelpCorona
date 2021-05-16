@@ -1,19 +1,18 @@
 // importing dependencies
 import React, { Fragment, useState, useEffect } from "react";
 import axios from "axios";
-//importing custom CSS
-import "../styles/Home.css";
+import ReactGA from "react-ga";
+//importing components
 import URL from "../assets/Constants";
 import NavigationBar from "../components/NavigationBar";
 import Footer from "../components/Footer";
 import { Divider } from "antd";
 import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet";
-import {
-  FacebookShareButton,
-  TwitterShareButton,
-  WhatsappShareButton,
-} from "react-share";
+import { FacebookShareButton, TwitterShareButton, WhatsappShareButton } from "react-share";
+//importing custom CSS
+import "../styles/Home.css";
+
 const month = [
   "Jan",
   "Feb",
@@ -42,6 +41,11 @@ const Home = () => {
       setFetchedData(recievedata.data);
     };
     fetchData();
+
+    //initializing google analytics
+    ReactGA.initialize("G-62BTZL2EPX");
+    //to report page view
+    ReactGA.pageview("/");
   }, []);
 
   const formatAMPM = (date) => {
@@ -69,11 +73,14 @@ const Home = () => {
     const similarRelated = ["@helpcorona_xyz"];
     const threadURL = `/thread/${item.id}`;
     return (
-      <div className="m-3 m-md-0 p-0 p-md-2 col-12 col-md-6 mx-auto" key={item.id}>
-        <div
-          className="request-card w-100 px-4 p-md-5 position-relative"
-        >
-          <h3 className="text-light-theme pb-0 mb-0 pt-3">Request #{item.id}</h3>
+      <div
+        className="m-3 m-md-0 p-0 p-md-2 col-12 col-md-6 mx-auto"
+        key={item.id}
+      >
+        <div className="request-card w-100 px-4 p-md-5 position-relative">
+          <h3 className="text-light-theme pb-0 mb-0 pt-3">
+            Request #{item.id}
+          </h3>
           <p className="text-muted my-0 py-0">
             {month[newDate.getMonth()] +
               " " +
@@ -202,7 +209,12 @@ const Home = () => {
             target="_blank"
             rel="noreferrer"
           >
-            <div className="btn btn-outline-primary ml-2" style={{marginTop: "8vh"}}>Ask for help</div>
+            <div
+              className="btn btn-outline-primary ml-2"
+              style={{ marginTop: "8vh" }}
+            >
+              Ask for help
+            </div>
           </a>
         </div>
         <div className="conainer-fluid">
