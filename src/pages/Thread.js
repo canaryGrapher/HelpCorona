@@ -1,5 +1,6 @@
 import React, { Fragment, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import ReCAPTCHA from "react-google-recaptcha";
 import axios from "axios";
 import Comments from "../components/Comments";
 import NavigationBar from "../components/NavigationBar";
@@ -25,6 +26,8 @@ const month = [
 ];
 
 const Thread = () => {
+  let captcha;
+  const [recapthaValue, setRecapthaValue] = useState("Empty");
   const params = useParams();
   const formatAMPM = (date) => {
     var hours = date.getHours();
@@ -35,6 +38,19 @@ const Thread = () => {
     minutes = minutes < 10 ? "0" + minutes : minutes;
     var strTime = hours + ":" + minutes + " " + ampm;
     return strTime;
+  };
+  const onChange = (value) => {
+    setRecapthaValue(value);
+  };
+  const setCaptchaRef = (ref) => {
+    if (ref) {
+      return (captcha = ref);
+    }
+  };
+
+  const resetCaptcha = () => {
+    // maybe set it till after is submitted
+    captcha.reset();
   };
   const [fetchedDetails, setFetchedDetails] = useState({
     entrynumber: 1,
@@ -102,16 +118,22 @@ const Thread = () => {
   const submitLead = async () => {
     if (commentBody != null) {
       if (confirmPromise) {
-        const sendLead = await axios.post(
-          `${URL}/api/requests/public/thread/comment/${params.id}`,
-          { comment: commentBody }
-        );
-        if (sendLead.data === "Post Added") {
-          setRefreshState({ change: true });
-          changeConfirmPromise();
-          message.success("The comment was added");
-        } else {
-          message.error("There was an error, try again");
+        if (recapthaValue !== "Empty") {
+          resetCaptcha();
+          alert(recapthaValue)
+          const sendLead = await axios.post(
+            `${URL}/api/requests/public/thread/comment/${params.id}`,
+            { comment: commentBody, code: recapthaValue }
+          );
+          if (sendLead.data === "Post Added") {
+            setRefreshState({ change: true });
+            changeConfirmPromise();
+            message.success("The comment was added");
+          } else {
+            message.error("There was an error, try again");
+          }
+        } else{
+          message.error("Complete the Recaptcha!")
         }
       } else {
         message.error("Accept the declaration by clicking the checkbox!");
@@ -170,6 +192,14 @@ const Thread = () => {
         I declare that the lead I am providing is legitimate and is not meant to
         hurt anyone.
       </Checkbox>
+      <br />
+      <div className="w-100 d-flex flex-row justify-content-center mt-2">
+        <ReCAPTCHA
+          ref={(r) => setCaptchaRef(r)}
+          onChange={onChange}
+          sitekey="6LdRYNcaAAAAAGCu6qTkEiCF5dP_pw6rNbiitKkI"
+        />
+      </div>
       <br />
       <Button type="primary" onClick={submitLead}>
         Submit Lead

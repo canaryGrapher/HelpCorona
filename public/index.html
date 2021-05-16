@@ -1,57 +1,154 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="theme-color" content="#000000" />
+    <meta
+      name="description"
+      content="All the information regarding covid resources at one place. All data is verified personally by our team."
+    />
+    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@900&display=swap"
+      rel="stylesheet"
+    />
+    <title>HelpCorona | Help India fight Covid-19 privately</title>
+    <meta
+      name="title"
+      content="HelpCorona | Help India fight Covid-19"
+      data-react-helmet="true"
+    />
+    <meta
+      name="description"
+      content="HelpCorona | Help India fight Covid-19: Find all Covid related support resources, personally vetted by dedicated volunteers from all around the country."
+      data-react-helmet="true"
+    />
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:url"
+      content="https://helpcorona.xyz/"
+      data-react-helmet="true"
+    />
+    <meta
+      property="og:title"
+      content="HelpCorona | Help India fight Covid-19"
+      data-react-helmet="true"
+    />
+    <meta
+      property="og:description"
+      content="HelpCorona | Help India fight Covid-19: Find all Covid related support resources, personally vetted by dedicated volunteers from all around the country."
+      data-react-helmet="true"
+    />
+    <meta
+      property="og:image"
+      content="https://images.unsplash.com/photo-1584036561566-baf8f5f1b144"
+      data-react-helmet="true"
+    />
 
-<head>
-  <meta charset="utf-8" />
-  <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-  <meta name="theme-color" content="#000000" />
-  <meta name="description"
-    content="All the information regarding covid resources at one place. All data is verified personally by our team." />
-  <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
-  <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-  <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@900&display=swap" rel="stylesheet">
-  <title>HelpCorona | Help India fight Covid-19 privately</title>
-  <meta name="title" content="HelpCorona | Help India fight Covid-19" data-react-helmet="true">
-  <meta name="description"
-    content="HelpCorona | Help India fight Covid-19: Find all Covid related support resources, personally vetted by dedicated volunteers from all around the country."
-    data-react-helmet="true">
-  <!-- Open Graph / Facebook -->
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://helpcorona.xyz/" data-react-helmet="true">
-  <meta property="og:title" content="HelpCorona | Help India fight Covid-19" data-react-helmet="true">
-  <meta property="og:description" content="HelpCorona | Help India fight Covid-19: Find all Covid related support resources, personally vetted by dedicated volunteers from all around the country." data-react-helmet="true"  >
-  <meta property="og:image" content="https://images.unsplash.com/photo-1584036561566-baf8f5f1b144" data-react-helmet="true"  >
+    <!-- Twitter -->
+    <meta
+      property="twitter:card"
+      content="https://images.unsplash.com/photo-1584036561566-baf8f5f1b144"
+      data-react-helmet="true"
+    />
+    <meta
+      property="twitter:url"
+      content="https://helpcorona.xyz/"
+      data-react-helmet="true"
+    />
+    <meta
+      property="twitter:title"
+      content="HelpCorona | Help India fight Covid-19"
+      data-react-helmet="true"
+    />
+    <meta
+      property="twitter:description"
+      content="Find all Covid related support resources, personally vetted by dedicated volunteers from all around the country."
+      data-react-helmet="true"
+    />
+    <meta
+      property="twitter:image"
+      content="https://images.unsplash.com/photo-1584036561566-baf8f5f1b144"
+      data-react-helmet="true"
+    />
+    <script
+      src="https://kit.fontawesome.com/4b9ba14b0f.js"
+      crossorigin="anonymous"
+    ></script>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-R34TTQ0JL8"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
 
-  <!-- Twitter -->
-  <meta property="twitter:card" content="https://images.unsplash.com/photo-1584036561566-baf8f5f1b144" data-react-helmet="true"  >
-  <meta property="twitter:url" content="https://helpcorona.xyz/" data-react-helmet="true">
-  <meta property="twitter:title" content="HelpCorona | Help India fight Covid-19" data-react-helmet="true">
-  <meta property="twitter:description"
-    content="Find all Covid related support resources, personally vetted by dedicated volunteers from all around the country." data-react-helmet="true">
-  <meta property="twitter:image" content="https://images.unsplash.com/photo-1584036561566-baf8f5f1b144" data-react-helmet="true">
-  <script src="https://kit.fontawesome.com/4b9ba14b0f.js" crossorigin="anonymous"></script>
-</head>
+      gtag("config", "UA-148968911-1");
+    </script>
+    <!-- Google Tag Manager -->
+    <script>
+      (function (w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
+        var f = d.getElementsByTagName(s)[0],
+          j = d.createElement(s),
+          dl = l != "dataLayer" ? "&l=" + l : "";
+        j.async = true;
+        j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+        f.parentNode.insertBefore(j, f);
+      })(window, document, "script", "dataLayer", "GTM-53XMQQT");
+    </script>
+    <!-- End Google Tag Manager -->
+  </head>
 
-<body>
-  <noscript>You need to enable JavaScript to run this app.</noscript>
-  <script>
-    if ('serviceWorker' in navigator) {
-      window.addEventListener('load', function () {
-        navigator.serviceWorker.register('worker.js').then(function (registration) {
-          console.log('Worker registration successful', registration.scope);
-        }, function (err) {
-          console.log('Worker registration failed', err);
-        }).catch(function (err) {
-          console.log(err);
+  <body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript
+      ><iframe
+        src="https://www.googletagmanager.com/ns.html?id=GTM-53XMQQT"
+        height="0"
+        width="0"
+        style="display: none; visibility: hidden"
+      ></iframe
+    ></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <script>
+      if ("serviceWorker" in navigator) {
+        window.addEventListener("load", function () {
+          navigator.serviceWorker
+            .register("worker.js")
+            .then(
+              function (registration) {
+                console.log(
+                  "Worker registration successful",
+                  registration.scope
+                );
+              },
+              function (err) {
+                console.log("Worker registration failed", err);
+              }
+            )
+            .catch(function (err) {
+              console.log(err);
+            });
         });
-      });
-    } else {
-      console.log('Service Worker is not supported by browser.');
-    }
-  </script>
-  <div id="root"></div>
-</body>
-
+      } else {
+        console.log("Service Worker is not supported by browser.");
+      }
+    </script>
+    <div id="root"></div>
+  </body>
 </html>

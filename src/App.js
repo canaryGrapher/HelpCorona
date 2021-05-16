@@ -10,7 +10,7 @@ import Thread from "./pages/Thread";
 
 const App = () => {
   useEffect(() => {
-    ReactGA.initialize("G-62BTZL2EPX");
+    ReactGA.initialize("UA-148968911-1");
     //to report page view
     ReactGA.pageview(window.location.pathname + window.location.search);
   })

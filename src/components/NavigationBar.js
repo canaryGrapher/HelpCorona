@@ -21,7 +21,7 @@ const NavigationBar = (props) => {
       >
         <Link to="/">
           <Navbar.Brand
-            className="text-dark font-weight-bold fw-bolder"
+            className="text-dark font-weight-bold fw-bolder position-absolute"
             style={{ top: "8px" }}
           >
             <img
@@ -50,7 +50,7 @@ const NavigationBar = (props) => {
               <span className={styleAbout}>About</span>
             </Link>
             <Link className="nav-link" to="/legal">
-              <span className={styleLegal}>Legal</span>
+              <span className={styleLegal}>Disclaimer</span>
             </Link>
             <a className="nav-link" href="/about#volunteer">
               <span>Volunteer</span>

@@ -25,3 +25,7 @@
     padding-left: 10px;
     line-height: 40px;
 }
+
+.legal-notice>p {
+    font-size: 1.2rem;
+}

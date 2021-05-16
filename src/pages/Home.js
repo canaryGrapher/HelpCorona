@@ -9,7 +9,11 @@ import Footer from "../components/Footer";
 import { Divider } from "antd";
 import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet";
-import { FacebookShareButton, TwitterShareButton, WhatsappShareButton } from "react-share";
+import {
+  FacebookShareButton,
+  TwitterShareButton,
+  WhatsappShareButton,
+} from "react-share";
 //importing custom CSS
 import "../styles/Home.css";
 
@@ -41,7 +45,6 @@ const Home = () => {
       setFetchedData(recievedata.data);
     };
     fetchData();
-
     //initializing google analytics
     ReactGA.initialize("G-62BTZL2EPX");
     //to report page view
